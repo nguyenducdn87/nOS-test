@@ -1,0 +1,74 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "jasmine": true
+  },
+  "rules": {
+    "arrow-body-style": ["off"],
+    "arrow-parens": ["error", "always"],
+    "comma-dangle": ["error", "never"],
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "no-else-return": ["off"],
+    "function-paren-newline": ["error", "consistent"],
+    "object-curly-newline": ["error", { "consistent": true }],
+    "jsx-a11y/anchor-is-valid": [ "error", { "components": ["Link"], "specialLink": ["to"] }],
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": [
+        "**/__mocks__/**/*.js",
+        "**/__tests__/**/*.js",
+        "**/public/electron.js",
+        "config-overrides.js"
+      ]
+    }],
+    "react/no-typos": ["off"],
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
+    "react/sort-comp": ["error", {
+      "order": [
+        "static-methods",
+        "type-annotations",
+        "instance-variables",
+        "lifecycle",
+        "renderers",
+        "handlers",
+        "everything-else"
+      ],
+      "groups": {
+        "lifecycle": [
+          "displayName",
+          "propTypes",
+          "contextTypes",
+          "childContextTypes",
+          "mixins",
+          "statics",
+          "defaultProps",
+          "constructor",
+          "getDefaultProps",
+          "getInitialState",
+          "state",
+          "getChildContext",
+          "componentWillMount",
+          "componentDidMount",
+          "componentWillReceiveProps",
+          "shouldComponentUpdate",
+          "componentWillUpdate",
+          "componentDidUpdate",
+          "componentWillUnmount"
+        ],
+        "renderers": [
+          "render",
+          "/^render.+$/"
+        ],
+        "handlers": [
+          "/^handle.+$/"
+        ]
+      }
+    }]
+  },
+  "settings": {
+    "import/core-modules": ["electron"],
+    "import/resolver": { "babel-module": {} }
+  }
+}
